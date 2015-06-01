@@ -1,0 +1,86 @@
+.view_morebtn  {
+    background-color: rgb(227, 5, 130);
+    border-color: rgb(227, 5, 130);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    color: #fff !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 5px 14px;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+.jobapply {
+    background-color: rgb(227, 5, 130) !important;
+    border-color: rgb(227, 5, 130);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    color: #fff !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 8px 14px !important;
+    text-align: center;
+    text-decoration: none !important;
+ background-image: none !important;
+}
+#vacancy_details p, .job p {
+    margin-bottom: 6px !important;
+}
+.job label {
+    float: left;
+    width: 200px;
+}
+.job {
+    border-bottom: 1px solid #333;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+#vacancy_details label {
+    float: left;
+    width: 200px;
+}
+.star { color:#F00; }
+.searchlabel {
+    float: left;
+    width: 140px;
+}
+.search_form select
+{
+	width:150px;
+}
+.job_search.view_morebtn  {
+    background-color: rgb(227, 5, 130) !important;
+    border-color: rgb(227, 5, 130) !important;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    color: #fff !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 5px 14px;
+    text-align: center;
+    text-decoration: none !important;
+}
+.pageul li {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    position: static;
+}
+#form-application table tr th, #form-application table tr td {
+    padding:10px 0.4em;
+}
+
+#form-application table tr {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+}
