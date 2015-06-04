@@ -82,6 +82,9 @@
 		$t1tag=$t2tag='';
 		$t1tag = @$_REQUEST['t1tag'] ? @$_REQUEST['t1tag'] : '' ;
 		$t2tag = @$_REQUEST['t2tag'] ? @$_REQUEST['t2tag'] : '';
+		$taglistpass = $t1tag.','.$t2tag;
+
+		$taglistpass = trim($taglistpass,',');
 		$request = '<ChameleonIAPI>
 						<Method>SearchVacancies</Method>
 						<APIKey>'.$APIKey.'</APIKey>
@@ -92,7 +95,7 @@
 									  <Param Name="Temporary" Value="'.$temporary.'" />
 									  <Param Name="PageNo" Value="'.$_SESSION['PageNo'].'" />
 									  <Param Name="PageSize" Value="'.$page_size.'" />
-									  <Param Name="TagIDCSV" Value="!AND'.$t2tag.'" />
+									  <Param Name="TagIDCSV" Value="!AND'.$taglistpass.'" />
 						</Filter>
 					</ChameleonIAPI>';
 		$encoded = 'Xml='.$request.'&Action=postxml&AuthKey='.$AuthKey.'&AuthPassword='.$AuthPassword;
@@ -123,7 +126,7 @@
 			else
 			{ 
 				$jobs_vac =  @$array['Vacancies']['Vacancy']; 
-				$total = (isset($array['Vacancies']['Vacancy'][0])) ? $array['Vacancies']['Vacancy'][0]['TotalCount'] : $array['Vacancies']['Vacancy']['TotalCount'];
+				@$total = (isset($array['Vacancies']['Vacancy'][0])) ? $array['Vacancies']['Vacancy'][0]['TotalCount'] : $array['Vacancies']['Vacancy']['TotalCount'];
 			}
 		}  
 		$_SESSION['currentpage']  = $_SESSION['PageNo'];
@@ -140,7 +143,7 @@
                 <option value="">Select</option>
                 <?php foreach($job_taglist1 as $value )
 				  { ?>
-				<option value="<?php echo $value['TagId']?>" <?php if($value['TagId'] == @$job_taglist1){?> selected="selected"<?php } ?>><?php echo $value['Tag']?></option>
+				<option value="<?php echo $value['TagId']?>" <?php if($value['TagId'] == @$t1tag){?> selected="selected"<?php } ?>><?php echo $value['Tag']?></option>
 				<?php }
 				?>
                 </select>
@@ -153,7 +156,7 @@
                 <option value="">Select</option>
                 <?php foreach($job_taglist2 as $value )
 				  { ?>
-				<option value="<?php echo $value['TagId']?>" <?php if($value['TagId'] == @$job_taglist2){?> selected="selected"<?php } ?>><?php echo $value['Tag']?></option>
+				<option value="<?php echo $value['TagId']?>" <?php if($value['TagId'] == @$t1tag){?> selected="selected"<?php } ?>><?php echo $value['Tag']?></option>
 				<?php }
 				?>
              </select>
@@ -187,7 +190,7 @@ if(!empty($jobs_vac)){
 	<div class="job">
     	<p><span class="type"><label><b>Job Title:</b></label><?php echo esc_html($job['JobTitle'])?></span></p>
         <?php if($feed_location == '1') { ?>
-        <p><span class="location"><label><b>Location:</b></label><?php echo esc_html($job['LocationTag']); ?></span></p>
+        <p><span class="location"><label><b>Location:</b></label><?php echo esc_html(is_array($job['LocationTag'])?implode(', ',$job['LocationTag']):$job['LocationTag']); ?></span><br></p>
         <?php } ?>
         <p><span class="type"><label><b>Job Reference:</b></label><?php echo esc_html(($job['Reference']))?></span></p>
         <?php   if($feed_type == '1') { ?>
