@@ -22,7 +22,7 @@ function cjf_jobadmin_menu()
 		8,
 		__FILE__,
 		"cjf_jobadmin",
-		".@site_url()."."/wp-admin/images/generic.png"
+		".@site_url."."/wp-admin/images/generic.png"
 	); 
 	
 	add_submenu_page(__FILE__, 'Job Listing', 'Job Listing', 'manage_options', __FILE__.'/JobListing', 'cjf_listing_admin_fun');
