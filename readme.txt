@@ -5,7 +5,7 @@ Web site: https://www.chameleoni.com/chameleoni-website-design/wordpress-website
 Tags: jobs, chameleoni, recruitment
 Requires at least: 4.0.1
 Tested up to: 4.2
-Stable tag: trunk
+Stable tag: version_1.1
 License: GPLv2 or later
 
 == Description ==
