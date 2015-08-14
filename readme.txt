@@ -4,7 +4,7 @@ Contributors: joomla-is-better, Chameleoni
 Web site: https://www.chameleoni.com/chameleoni-website-design/wordpress-website-integration/
 Tags: jobs, chameleoni, recruitment
 Requires at least: 4.0.1
-Tested up to: 4.2
+Tested up to: 4.3
 Stable tag: trunk
 License: GPLv2 or later
 
